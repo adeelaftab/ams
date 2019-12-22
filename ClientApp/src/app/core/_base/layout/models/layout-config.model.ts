@@ -1,5 +1,4 @@
 export interface LayoutConfigModel {
-	demo: string;
 	self: {
 		layout?: string;
 		body?: {

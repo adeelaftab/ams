@@ -9,8 +9,8 @@
 	display: flex;
 	align-items: center;
 	align-content: flex-begin;
-	padding: 0;
-	flex-grow: 1;
+	padding: 0 3px 0 0;
+	flex-grow: 0;
 	flex-basis: 0;
 	max-width: 100%;
 	justify-content: center;
@@ -27,4 +27,7 @@
 	.kt-header__brand {
 		display: none;
 	}
+}
+.kt-grid__item{
+	justify-content: unset;
 }

@@ -105,7 +105,7 @@ export class MenuHorizontalComponent implements OnInit, AfterViewInit {
 	ngOnInit(): void {
 		this.rootArrowEnabled = this.layoutConfigService.getConfig('header.menu.self.root-arrow');
 		this.asideDisplay = this.layoutConfigService.getConfig('aside.self.display');
-
+		
 		this.currentRouteUrl = this.router.url;
 		this.router.events
 			.pipe(filter(event => event instanceof NavigationEnd))
@@ -162,6 +162,7 @@ export class MenuHorizontalComponent implements OnInit, AfterViewInit {
 	 */
 	getItemAttrSubmenuToggle(item) {
 		let toggle = 'hover';
+		console.log(item);
 		if (objectPath.get(item, 'toggle') === 'click') {
 			toggle = 'click';
 		} else if (objectPath.get(item, 'submenu.type') === 'tabs') {

@@ -374,6 +374,49 @@ export class MenuConfig {
 						},
 					]
 				},
+				{
+					title: 'Settings',
+					root: true,
+					alignment: 'left',
+					toggle: 'hover',
+					submenu: [
+						{
+							title: 'Flat',
+							icon: 'flaticon2-list-2',
+							page: '/Flats'
+						},
+						{
+							title: 'Building',
+							icon: 'flaticon2-list-2',
+							page: '/Flats'
+						},
+						{
+							title: 'Flat Type',
+							icon: 'flaticon2-list-2',
+							page: '/Flats'
+						},
+						{
+							title: 'Customer',
+							icon: 'flaticon2-list-2',
+							page: '/Flats'
+						},
+						{
+							title: 'Nationality',
+							icon: 'flaticon2-list-2',
+							page: '/Flats'
+						},
+						{
+							title: 'City',
+							icon: 'flaticon2-list-2',
+							page: '/Flats'
+						},
+						{
+							title: 'Country',
+							icon: 'flaticon2-list-2',
+							page: '/Flats'
+						}
+					]
+				},
 			]
 		},
 		aside: {

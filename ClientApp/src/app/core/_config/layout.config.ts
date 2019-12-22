@@ -2,7 +2,6 @@ import {LayoutConfigModel} from '../_base/layout';
 
 export class LayoutConfig {
 	public defaults: LayoutConfigModel = {
-		demo: 'demo9',
 		// == Base Layout
 		self: {
 			layout: 'fluid', // fluid|boxed
@@ -10,8 +9,8 @@ export class LayoutConfig {
 				'background-image': './assets/media/misc/bg-1.jpg',
 			},
 			logo: {
-				desktop: './assets/media/logos/logo-9.png',
-				sticky: './assets/media/logos/logo-9-sm.png',
+				desktop: './assets/media/logos/logo-10.png',
+				sticky: './assets/media/logos/logo-10-sm.png',
 			},
 		},
 		// == Page Splash Screen loading
@@ -56,6 +55,7 @@ export class LayoutConfig {
 					desktop: {
 						enabled: true,
 						mode: 'menu',
+						toggle: 'hover',
 					},
 					mobile: true,
 				},
@@ -63,11 +63,11 @@ export class LayoutConfig {
 			menu: {
 				self: {
 					display: true,
-					'root-arrow': false,
+					'root-arrow': true,
 				},
 				desktop: {
 					arrow: true,
-					toggle: 'click',
+					toggle: 'hover',
 					submenu: {
 						skin: 'light',
 						arrow: true,
@@ -90,8 +90,8 @@ export class LayoutConfig {
 		},
 		aside: {
 			self: {
-				fixed: true,
-				display: true,
+				fixed: false,
+				display: false,
 				minimize: {
 					toggle: true,
 					default: false,

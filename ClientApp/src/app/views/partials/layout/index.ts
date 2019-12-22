@@ -18,9 +18,7 @@ export { SubheaderSearchComponent } from './subheader/subheader-search/subheader
 // Topbar components
 export { LanguageSelectorComponent } from './topbar/language-selector/language-selector.component';
 export { NotificationComponent } from './topbar/notification/notification.component';
-export { QuickActionComponent } from './topbar/quick-action/quick-action.component';
 export { SearchDefaultComponent } from './topbar/search-default/search-default.component';
-export { SearchDropdownComponent } from './topbar/search-dropdown/search-dropdown.component';
 export { UserProfileComponent } from './topbar/user-profile/user-profile.component';
 export { UserProfile2Component } from './topbar/user-profile2/user-profile2.component';
 export { UserProfile3Component } from './topbar/user-profile3/user-profile3.component';
