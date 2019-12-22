@@ -1,6 +1,2 @@
-<body>
-  <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
-</body>
+<kt-splash-screen *ngIf="loader"></kt-splash-screen>
+<router-outlet></router-outlet>

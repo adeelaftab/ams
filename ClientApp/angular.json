@@ -3,29 +3,52 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AppSystem": {
+    "metronic": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
-      "schematics": {},
+      "prefix": "kt",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "progress": false,
-            "extractCss": true,
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": ["src/assets"],
-            "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/.htaccess"
             ],
-            "scripts": []
+            "styles": [
+              	"src/styles.scss",
+				"node_modules/bootstrap/dist/css/bootstrap.css",
+				"node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+				"node_modules/socicon/css/socicon.css",
+				"node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+				"src/assets/plugins/line-awesome/css/line-awesome.css",
+				"src/assets/plugins/flaticon/flaticon.css",
+				"src/assets/plugins/flaticon2/flaticon.css",
+				"src/assets/sass/style.angular.scss"
+            ],
+            "scripts": [
+				"node_modules/popper.js/dist/umd/popper.js",
+				"node_modules/tooltip.js/dist/umd/tooltip.min.js",
+				"node_modules/perfect-scrollbar/dist/perfect-scrollbar.js"
+            ],
+		  	"stylePreprocessorOptions": {
+			  "includePaths": [
+				  "src/assets"
+			  ]
+		  	},
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
@@ -35,7 +58,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+			  "scripts": [],
+			  "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -43,25 +67,32 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "AppSystem:build"
+            "browserTarget": "metronic:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "AppSystem:build:production"
+              "browserTarget": "metronic:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AppSystem:build"
+            "browserTarget": "metronic:build"
           }
         },
         "test": {
@@ -71,66 +102,57 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": ["src/styles.css"],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": [],
-            "assets": ["src/assets"]
+            "assets": [
+              "src/assets"
+            ]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist-server",
-            "main": "src/main.ts",
-            "tsConfig": "src/tsconfig.server.json"
-          },
-          "configurations": {
-            "dev": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": true
-            },
-            "production": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false
-            }
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     },
-    "AppSystem-e2e": {
+    "metronic-e2e": {
       "root": "e2e/",
       "projectType": "application",
+      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "AppSystem:serve"
+            "devServerTarget": "metronic:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "metronic:serve:production"
+            }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "AppSystem"
+  "defaultProject": "metronic"
 }
