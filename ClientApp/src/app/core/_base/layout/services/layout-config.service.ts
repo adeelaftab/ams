@@ -125,11 +125,12 @@ export class LayoutConfigService {
 	 * @param config
 	 */
 	loadConfigs(config: LayoutConfigModel) {
-		this.layoutConfig = this.getSavedConfig();
+		//this.layoutConfig = this.getSavedConfig();
+		this.layoutConfig = config;
 		// use saved config as priority, or load new config if demo does not matched
-		if (!this.layoutConfig || objectPath.get(this.layoutConfig, 'demo') !== config.demo) {
-			this.layoutConfig = config;
-		}
+		// if (!this.layoutConfig || objectPath.get(this.layoutConfig, 'demo') !== config.demo) {
+		// 	this.layoutConfig = config;
+		// }
 		this.saveConfig(this.layoutConfig);
 	}
 

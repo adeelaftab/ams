@@ -28,26 +28,32 @@
               "src/.htaccess"
             ],
             "styles": [
-              	"src/styles.scss",
-				"node_modules/bootstrap/dist/css/bootstrap.css",
-				"node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
-				"node_modules/socicon/css/socicon.css",
-				"node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-				"src/assets/plugins/line-awesome/css/line-awesome.css",
-				"src/assets/plugins/flaticon/flaticon.css",
-				"src/assets/plugins/flaticon2/flaticon.css",
-				"src/assets/sass/style.angular.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/socicon/css/socicon.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/datatables.net-responsive-dt/css/responsive.dataTables.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
+              "src/assets/plugins/line-awesome/css/line-awesome.css",
+              "src/assets/plugins/flaticon/flaticon.css",
+              "src/assets/plugins/flaticon2/flaticon.css",
+              "src/assets/sass/style.angular.scss"
             ],
             "scripts": [
-				"node_modules/popper.js/dist/umd/popper.js",
-				"node_modules/tooltip.js/dist/umd/tooltip.min.js",
-				"node_modules/perfect-scrollbar/dist/perfect-scrollbar.js"
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/tooltip.js/dist/umd/tooltip.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.js",
+              "node_modules/datatables.net-responsive/js/dataTables.responsive.js"
             ],
-		  	"stylePreprocessorOptions": {
-			  "includePaths": [
-				  "src/assets"
-			  ]
-		  	},
+          "stylePreprocessorOptions": {
+          "includePaths": [
+            "src/assets"
+          ]
+          },
             "es5BrowserSupport": true
           },
           "configurations": {

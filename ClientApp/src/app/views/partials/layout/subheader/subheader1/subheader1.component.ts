@@ -15,7 +15,6 @@ export class Subheader1Component implements OnInit, OnDestroy, AfterViewInit {
 	// Public properties
 	@Input() fluid: boolean;
 	@Input() clear: boolean;
-
 	today: number = Date.now();
 	title = '';
 	desc = '';

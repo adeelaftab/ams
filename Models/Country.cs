@@ -9,7 +9,7 @@ namespace AppSystem.Models
         [MaxLength(150)]
         public string Name { get; set; }
         [Required]
-        [MaxLength(5)]
+        [MaxLength(10)]
         public string CountryCode { get; set; }
     }
 }

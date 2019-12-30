@@ -1,7 +1,10 @@
+import { DataTablesModule } from 'angular-datatables';
 // Angular
 import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule, ErrorHandler } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GestureConfig, MatProgressSpinnerModule } from '@angular/material';
@@ -92,6 +95,9 @@ export function hljsLanguages(): HighlightLanguage[] {
 	imports: [
 		BrowserAnimationsModule,
 		BrowserModule,
+		FormsModule,
+		HttpModule, 
+		DataTablesModule,
 		AppRoutingModule,
 		HttpClientModule,
 		environment.isMockEnabled ? HttpClientInMemoryWebApiModule.forRoot(FakeApiService, {

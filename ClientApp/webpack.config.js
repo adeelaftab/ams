@@ -28,7 +28,7 @@ const mainConfig = function () {
 		mode: "development",
 		stats: "errors-only",
 		performance: {
-			hints: false
+			hints: true
 		},
 		entry: entries,
 		output: {

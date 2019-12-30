@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">{{mainHeading}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeBottomSheet()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput autocomplete="off" placeholder="City Name" [formControl]="cityName" maxlength="150" required>
+      <mat-error *ngIf="cityName.invalid">{{getErrorNameMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Country" [formControl]="country" maxlength="10" mask="+0*" required>
+      <mat-error *ngIf="country.invalid">{{getErrorCodeMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-danger" (click)="closeBottomSheet()">Cancel</button>
+  <button type="button" class="btn btn-outline-success"  [disabled]="(country.invalid || cityName.invalid)" (click)="saveCountryData()">Save</button>
+</div>

@@ -138,16 +138,18 @@ export class SubheaderService {
 	getBreadcrumbs(menus: any) {
 		let url = this.pageConfigService.cleanUrl(this.router.url);
 		url = url.replace(new RegExp(/\./, 'g'), '/');
-
+		// console.log(url);
+		// console.log(menus);
 		const breadcrumbs = [];
 		const menuPath = this.getPath(menus, url) || [];
+		// console.log(menuPath);
 		menuPath.forEach(key => {
 			menus = menus[key];
 			if (typeof menus !== 'undefined' && menus.title) {
 				breadcrumbs.push(menus);
 			}
 		});
-
+		// console.log(breadcrumbs);
 		return breadcrumbs;
 	}
 
@@ -190,8 +192,8 @@ export class SubheaderService {
 				path.pop();
 			}
 		};
-
 		search(obj);
 		return path;
 	}
 }
+
