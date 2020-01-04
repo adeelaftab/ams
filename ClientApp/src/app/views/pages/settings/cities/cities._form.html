@@ -11,7 +11,11 @@
       <mat-error *ngIf="cityName.invalid">{{getErrorNameMessage()}}</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Country" [formControl]="country" maxlength="10" mask="+0*" required>
+      <mat-select placeholder="Favorite food" matInput [formControl]="country">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{ food.viewValue }}
+        </mat-option>
+      </mat-select>
       <mat-error *ngIf="country.invalid">{{getErrorCodeMessage()}}</mat-error>
     </mat-form-field>
   </div>

@@ -12,7 +12,11 @@ import { FormControl, Validators } from '@angular/forms';
   export class Addnewcitybottomsheet {
     constructor(private _bottomSheetRef: MatBottomSheetRef<Addnewcitybottomsheet>,private _bottomSheet: MatBottomSheet,private http: Http, public snackBar: MatSnackBar) {}
     public mainHeading: string = "Add New City";
-    
+    foods = [
+      {value: 'steak-0', viewValue: 'Steak'},
+      {value: 'pizza-1', viewValue: 'Pizza'},
+      {value: 'tacos-2', viewValue: 'Tacos'}
+    ];
     openLink(event: MouseEvent): void {
       this._bottomSheetRef.dismiss();
       event.preventDefault();

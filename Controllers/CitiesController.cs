@@ -54,6 +54,11 @@ namespace AppSystem.Controllers
             }            
         }
 
+        [HttpGet("countrylist")]
+        public async Task<IActionResult> GetCountries(){
+            return Ok(true);
+        }
+            
         public static bool check(string s)
         {
             return (s == null || s == String.Empty) ? true : false;
@@ -105,7 +110,7 @@ namespace AppSystem.Controllers
         }
         // Update data
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCountries(int id){
+        public async Task<IActionResult> GetCities(int id){
             var dupresname = await context.countries.Where(c => c.id == id).SingleAsync();
             return Ok(dupresname);
         }

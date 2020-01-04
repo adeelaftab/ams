@@ -92,13 +92,12 @@ namespace AppSystem.Controllers
             //search Check
             if (check(search) == false)
             {
-                search = "where Name Like '%" + search + "%' OR CountryCode Like '%" + search + "%'";
+                search = "where Name Like '%" + $@"{search}" + "%' OR CountryCode Like '%" + $@"{search}" + "%'";
             }
             else
             {
                 search = "";
             }
-
 
             //    return await context.countries.ToListAsync();
 
